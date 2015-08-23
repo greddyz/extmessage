@@ -1,0 +1,20 @@
+Структура страниц
+
+/Профиль пользователя/
+	Входящие
+	[[!extMessage? &param=`inbox`]]
+		Сообщения
+		[[!extMessagePageMsg]]
+		[[!FormIt?
+			&hooks = `extMessageFormSent,spam,redirect`
+			&redirectTo = `41`
+		]]
+		[[$extmsg.formReply]]
+	Отправленные
+	[[!extMessage? &param=`outbox`]]
+	Новое сообщение
+	[[!extMessage? &param=`newmsg`]]
+
+Зависимости пакета
+	pdoTools
+	FormIt

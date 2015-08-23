@@ -1,0 +1,6 @@
+Changelog for extMessage.
+
+1.0.0-beta
+==============
+- Opimized for MODX 2.3
+- Not plugin and system settings

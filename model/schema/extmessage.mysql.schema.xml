@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="extmessage" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="extpmessage"
+	   version="1.1">
+
+	<object class="ExtMessage" table="user_extmessages" extends="xPDOSimpleObject">
+		<field key="type" dbtype="nvarchar" precision="100" phptype="string" null="false" default="" />
+		<field key="sender" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+		<field key="recipient" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+		<field key="subject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+		<field key="message" dbtype="text" phptype="string" null="false" default="" />
+		<field key="private" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
+		<field key="date_sent" dbtype="datetime" phptype="datetime" null="false" default="0000-00-00 00:00:00" />
+        <field key="read" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="flag" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="extended" dbtype="text" phptype="json" null="true" default="" />
+
+        <index alias="sender" name="sender" primary="false" unique="false" type="BTREE">
+			<column key="sender" length="" collation="A" null="false" />
+        </index>
+        <index alias="recipient" name="recipient" primary="false" unique="false" type="BTREE">
+			<column key="recipient" length="" collation="A" null="false" />
+        </index>
+        <index alias="type" name="type" primary="false" unique="false" type="BTREE">
+			<column key="type" length="" collation="A" null="false" />
+        </index>
+    </object>
+
+</model>
